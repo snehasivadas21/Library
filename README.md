@@ -426,45 +426,6 @@ Example:
 
 ---
 
-# Validation
-
-The API validates incoming book data.
-
-## Title
-
-* Cannot be empty
-* Must contain at least 2 characters
-
-## Author
-
-* Cannot be empty
-* Must contain at least 2 characters
-
-## Published date
-
-The publication date cannot be in the future.
-
-## ISBN
-
-The ISBN:
-
-* Must contain only numbers, spaces, or hyphens
-* Must contain either 10 or 13 digits after normalization
-* Must be unique
-
-## Category
-
-* Cannot be empty
-* Must contain at least 2 characters
-
-## Title and author
-
-The title and author cannot be exactly the same, ignoring case.
-
-Validation errors are returned by the API and displayed by the React frontend.
-
----
-
 # Frontend Setup
 
 Open a new terminal while the Django server is running.
@@ -623,33 +584,6 @@ Open the frontend URL in your browser.
 
 ---
 
-# Testing
-
-Backend tests are included in:
-
-```text
-backend/books/tests.py
-```
-
-Run the test suite from the `backend` directory:
-
-```bash
-python manage.py test books
-```
-
-The tests cover the main API functionality, including:
-
-* Book creation
-* Book retrieval
-* Book update
-* Book deletion
-* Search
-* Filtering
-* Ordering
-* Pagination
-
----
-
 # CORS
 
 The backend uses `django-cors-headers` to allow requests from the React development server.
@@ -661,39 +595,6 @@ CORS_ALLOWED_ORIGINS=http://localhost:5173
 ```
 
 If the frontend is running on another origin, update the environment variable accordingly.
-
----
-
-# Environment Variables
-
-The backend reads configuration from the root `.env` file.
-
-Example:
-
-```env
-DEBUG=True
-SECRET_KEY=your-secret-key
-ALLOWED_HOSTS=localhost,127.0.0.1
-CORS_ALLOWED_ORIGINS=http://localhost:5173
-```
-
-For production, use a secure secret key and set `DEBUG=False`.
-
----
-
-# Git and Sensitive Files
-
-The following files should not be committed:
-
-```text
-.env
-venv/
-db.sqlite3
-node_modules/
-dist/
-```
-
-The repository includes a `.gitignore` file to help prevent these files from being committed.
 
 ---
 
@@ -750,25 +651,3 @@ This is configured in:
 frontend/src/api.js
 ```
 
----
-
-# Future Improvements
-
-Possible future enhancements include:
-
-* Authentication and user accounts
-* Book cover images
-* Author management
-* Borrow/return functionality
-* Borrowing history
-* Role-based permissions
-* PostgreSQL for production
-* Automated frontend tests
-* Production deployment
-* Docker configuration
-
----
-
-## License
-
-This project was created as a library management application for development/assessment purposes.
