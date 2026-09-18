@@ -122,7 +122,6 @@ function BookFormModal({
                 <option value="Fiction">Fiction</option>
                 <option value="Sci-Fi">Sci-Fi</option>
                 <option value="History">History</option>
-                <option value="Biography">Biography</option>
               </select>
             </div>
 
